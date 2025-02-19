@@ -1,0 +1,68 @@
+1.
+#lista dos 5 primeiros colocados
+times = ['Corinthians', 'Flamengo','Athletico-MG' , 'Fluminense','Palmeiras' ]
+
+#os 3 primeiros colocados
+print("Os 3 primeiros colocados:", times[:3])
+
+#os últimos 2 colocados
+print("Os últimos 2 colocados:", times[-2:])
+
+#times em ordem alfabética
+times_ordenados = sorted(times)
+print("Times em ordem alfabética:", times_ordenados)
+
+#posição do Barcelona
+if 'Barcelona' in times:
+  posicao = times.index('Barcelona') + 1
+  print("O Barcelona está na posição:", posicao)
+else:
+  print("O Barcelona não está entre os 5 primeiros colocados.")
+
+
+2.
+conjuntos de modelos de smartphones para cada loja
+loja1 = {'iPhone 13', 'Samsung Galaxy S22', 'Google Pixel 6', 'Xiaomi Mi 11'}
+loja2 = {'Samsung Galaxy S22', 'Motorola Edge 30', 'iPhone 14', 'Google Pixel 6'}
+
+#conjuntos vazios
+modelos_ambas_lojas = set()
+todos_modelos = set()
+
+#verificando modelos disponíveis em ambas as lojas
+for modelo in loja1:
+    if modelo in loja2:
+        modelos_ambas_lojas.add(modelo)
+
+#verificando todos os modelos disponíveis nas duas lojas
+for modelo in (loja1 | loja2):  
+    if modelo not in todos_modelos:
+        todos_modelos.add(modelo)
+
+print("Modelos disponíveis na Loja 1:", loja1)
+print("Modelos disponíveis na Loja 2:", loja2)
+print("\nModelos disponíveis em ambas as lojas:", modelos_ambas_lojas)
+print("\nTodos os modelos disponíveis nas duas lojas:", todos_modelos)
+
+
+3.
+aluno = {}
+
+#armazenando o nome do aluno no dicionário
+nome = input("Digite o nome do aluno: ")
+aluno["nome"] = nome
+
+#armazenando média do aluno no dicionário
+media = float(input("Digite a média do aluno: "))
+aluno["media"] = media
+
+#verificando se o aluno está aprovado ou reprovado
+if media >= 50:
+    aluno["situacao"] = "AP"
+else:
+    aluno["situacao"] = "RP"
+
+print("\nDados do aluno:")
+print("Nome:", aluno["nome"])
+print("Média:", aluno["media"])
+print("Situação:", aluno["situacao"])
