@@ -1,0 +1,54 @@
+4.
+pessoas = []
+
+#lendo os dados de 3 pessoas
+for i in range(3):
+    nome = input(f"Digite o nome da {i+1} pessoa: ")
+    peso = float(input(f"Digite o peso da {i+1} pessoa: "))
+    pessoas.append({'nome': nome, 'peso': peso})
+
+#variáveis para encontrar a mais pesada e a mais leve
+mais_pesada = pessoas[0]
+mais_leve = pessoas[0]
+
+#achando os pesos
+for pessoa in pessoas:
+    if pessoa['peso'] > mais_pesada['peso']:
+        mais_pesada = pessoa
+    if pessoa['peso'] < mais_leve['peso']:
+        mais_leve = pessoa
+
+print("\nDados das pessoas:")
+print("Pessoa mais pesada:")
+print("Nome:", mais_pesada["nome"])
+print("Peso:", mais_pesada["peso"])
+print("\nPessoa mais leve:")
+print("Nome:", mais_leve["nome"])
+print("Peso:", mais_leve["peso"])
+
+
+5.
+n = int(input("Digite o número de pessoas: "))
+
+#lista para armazenar as idades
+idades = []
+mulheres_menos_20 = 0
+
+#dados das pessoas
+for i in range(n):
+    nome = input(f"Digite o nome da {i+1}ª pessoa: ")
+    idade = int(input(f"Digite a idade da {i+1}ª pessoa: "))
+    sexo = input(f"Digite o sexo da {i+1}ª pessoa (M/F): ").upper()
+    
+    idades.append(idade)
+
+#contando quantas mulheres têm menos de 20 anos
+    if sexo == "F" and idade < 20:
+        mulheres_menos_20 += 1
+
+#média de idade do grupo
+media_idade = sum(idades) / len(idades)
+
+print("\nResultados:")
+print("Média de idade do grupo:", round(media_idade, 2))
+print("Número de mulheres com menos de 20 anos:", mulheres_menos_20)
